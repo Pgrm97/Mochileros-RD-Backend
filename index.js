@@ -25,12 +25,12 @@ const server = http.createServer((req,res) => {
                     e = e.replace("*","");
                     let items = e.split(",");
                     items[1] = items[1].replace(" ","");
-                    fixedRecomm.push(items);
+                    let itemratings = {
+                        itemID: items[0],
+                        rating: items[1]
+                    }                    
+                    fixedRecomm.push(itemratings);
                 });
-
-                //------------------------
-                // Parse the fixedRecomm here, turn into JSON Object.
-                //------------------------------------------
                 
                 let JSONObject = {
                     userID: singularRecommendation[0],
